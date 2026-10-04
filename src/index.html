@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{t:meta.title}}</title>
+<meta name="description" content="{{t:meta.desc}}">
+<link rel="canonical" href="{{url}}">
+<link rel="alternate" hreflang="es" href="{{site}}/">
+<link rel="alternate" hreflang="en" href="{{site}}/en/">
+<link rel="alternate" hreflang="x-default" href="{{site}}/">
+<meta name="theme-color" content="#1D3A2E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{t:meta.title}}">
+<meta property="og:description" content="{{t:meta.desc}}">
+<meta property="og:image" content="{{site}}/img/og-1200.webp">
+<meta property="og:url" content="{{url}}">
+<meta property="og:locale" content="{{locale}}">
+<link rel="icon" href="{{base}}img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{base}}img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Young+Serif&display=swap">
+<link rel="preload" as="image" href="{{base}}img/mesa-syrniki-900.webp" imagesrcset="{{base}}img/mesa-syrniki-560.webp 560w, {{base}}img/mesa-syrniki-900.webp 900w, {{base}}img/mesa-syrniki-1400.webp 1400w" imagesizes="(min-width: 960px) 46vw, 88vw">
+<link rel="stylesheet" href="{{base}}styles.css">
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{t:skip}}</a>
+
+<header class="top" data-top>
+  <div class="top__in">
+    <a class="logo" href="#inicio" aria-label="Niki & Niki — inicio"><span class="logo__mark" aria-hidden="true"></span></a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#vitrina">{{t:nav.vitrina}}</a>
+      <a href="#desayunos">{{t:nav.desayunos}}</a>
+      <a href="#pan">{{t:nav.pan}}</a>
+      <a href="#visita">{{t:nav.visita}}</a>
+      <a href="#moraira">{{t:nav.moraira}}</a>
+    </nav>
+    <div class="top__side">
+      <span class="status" data-status aria-live="polite"><span class="status__dot"></span><span data-status-text>{{t:hero.m1}}</span></span>
+      <a class="lang" href="{{otherUrl}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang="{{otherLang}}"><span class="sr">{{t:lang.other}}</span><span aria-hidden="true">{{t:lang.otherShort}}</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" data-burger><span></span><span></span><span class="sr">{{t:nav.menu}}</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1 · HERO: la mesa -->
+<section class="hero" id="inicio" aria-labelledby="h1">
+  <div class="hero__text">
+    <p class="eyebrow">{{t:hero.eyebrow}}</p>
+    <h1 id="h1">{{t:hero.h1}}</h1>
+    <p class="lead">{{t:hero.lead}}</p>
+    <div class="ctas">
+      <a class="btn btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener">{{t:hero.cta1}} <span aria-hidden="true">→</span></a>
+      <a class="btn btn--line" href="#desayunos">{{t:hero.cta2}}</a>
+    </div>
+    <ul class="hero__meta">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{t:hero.m1}}</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14c0-3 3-5 7-5s7 2 7 5-3 6-7 6-7-3-7-6Z"/><circle cx="6" cy="7" r="2"/><circle cx="10.5" cy="4.5" r="2"/><circle cx="13.5" cy="4.5" r="2"/><circle cx="18" cy="7" r="2"/></svg>{{t:hero.m2}}</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18l-2-5H5L3 9Zm2 0v11m14-11v11M8 13h8"/></svg>{{t:hero.m3}}</li>
+    </ul>
+  </div>
+
+  <div class="hero__tables" data-tables>
+    <span class="sun" aria-hidden="true"></span>
+    <figure class="table table--big" data-spin="0.045">
+      <div class="table__disc">
+        <img src="{{base}}img/mesa-syrniki-900.webp" srcset="{{base}}img/mesa-syrniki-560.webp 560w, {{base}}img/mesa-syrniki-900.webp 900w, {{base}}img/mesa-syrniki-1400.webp 1400w" sizes="(min-width: 960px) 46vw, 88vw" width="900" height="900" alt="{{t:hero.tableAlt}}" fetchpriority="high">
+        <span class="pin" style="--x:79%;--y:41%" data-pin="1"><b>1</b></span>
+        <span class="pin" style="--x:86%;--y:31%" data-pin="2"><b>2</b></span>
+        <span class="pin" style="--x:59%;--y:61%" data-pin="3"><b>3</b></span>
+        <span class="pin" style="--x:20%;--y:50%" data-pin="4"><b>4</b></span>
+      </div>
+    </figure>
+    <figure class="table table--small" data-spin="-0.07">
+      <div class="table__disc">
+        <img src="{{base}}img/mesa-cafe-600.webp" srcset="{{base}}img/mesa-cafe-360.webp 360w, {{base}}img/mesa-cafe-600.webp 600w, {{base}}img/mesa-cafe-900.webp 900w" sizes="(min-width: 960px) 19vw, 38vw" width="600" height="600" alt="{{t:hero.cafeAlt}}">
+        <span class="pin" style="--x:50%;--y:46%" data-pin="5"><b>5</b></span>
+      </div>
+    </figure>
+    <div class="legend">
+      <p class="legend__title">{{t:hero.legendTitle}}</p>
+      <ol>
+        <li data-legend="1"><b>1</b>{{t:hero.a1}}</li>
+        <li data-legend="2"><b>2</b>{{t:hero.a2}}</li>
+        <li data-legend="3"><b>3</b>{{t:hero.a3}}</li>
+        <li data-legend="4"><b>4</b>{{t:hero.a4}}</li>
+        <li data-legend="5"><b>5</b>{{t:hero.a5}}</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · Lo que dicen las reseñas -->
+<section class="proof" aria-labelledby="proof-h">
+  <div class="wrap proof__in">
+    <div class="proof__head">
+      <p class="proof__rating"><span class="proof__big">{{biz.rating}}</span><span class="proof__stars" aria-hidden="true">★★★★☆</span><span>{{biz.reviews}} {{t:proof.mentions}} · {{t:proof.rating}}</span></p>
+      <h2 id="proof-h">{{t:proof.title}}</h2>
+    </div>
+    <ul class="proof__list">{{block:topics}}</ul>
+    <p class="proof__src">{{t:proof.source}}</p>
+  </div>
+</section>
+
+<!-- 3 · LA VITRINA -->
+<section class="vitrina" id="vitrina" aria-labelledby="vit-h">
+  <div class="wrap">
+    <div class="vitrina__head">
+      <div>
+        <p class="eyebrow eyebrow--light">{{t:vit.eyebrow}}</p>
+        <h2 id="vit-h">{{t:vit.h2}}</h2>
+      </div>
+      <p class="vitrina__lead">{{t:vit.lead}}</p>
+    </div>
+    <div class="chips" role="group" aria-label="{{t:vit.filters}}" data-filters>
+      <button type="button" aria-pressed="true" data-filter="all">{{t:vit.f.all}}</button>
+      <button type="button" aria-pressed="false" data-filter="baltic">{{t:vit.f.baltic}}</button>
+      <button type="button" aria-pressed="false" data-filter="france">{{t:vit.f.france}}</button>
+      <button type="button" aria-pressed="false" data-filter="celebrate">{{t:vit.f.celebrate}}</button>
+    </div>
+    <ul class="shelf" data-shelf>{{block:vitrina}}</ul>
+    <div class="vitrina__foot">
+      <div class="also">
+        <h3>{{t:vit.also.title}}</h3>
+        <p>{{t:vit.also}}</p>
+      </div>
+      <div class="order-mini">
+        <p>{{t:vit.orderLead}}</p>
+        <a class="btn btn--sun" href="tel:{{biz.phone}}">{{t:vit.call}} · {{biz.phoneLabel}}</a>
+      </div>
+    </div>
+    <p class="fine fine--light">{{t:vit.prices}}</p>
+  </div>
+</section>
+
+<dialog class="sheet" data-sheet aria-labelledby="sheet-h">
+  <form method="dialog"><button class="sheet__x" aria-label="{{t:dlg.close}}">×</button></form>
+  <div class="sheet__img"><img alt="" data-sheet-img width="760" height="760"></div>
+  <div class="sheet__body">
+    <div class="sheet__seal" data-sheet-seal></div>
+    <h3 id="sheet-h" data-sheet-name></h3>
+    <p class="sheet__price" data-sheet-price></p>
+    <p data-sheet-desc></p>
+    <div class="sheet__order" data-sheet-order hidden>
+      <a class="btn btn--sun" href="tel:{{biz.phone}}">{{t:vit.order}}</a>
+    </div>
+  </div>
+</dialog>
+
+<!-- 4 · DESAYUNOS -->
+<section class="desayunos" id="desayunos" aria-labelledby="des-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">{{t:des.eyebrow}}</p>
+      <h2 id="des-h">{{t:des.h2}}</h2>
+      <p class="lead">{{t:des.lead}}</p>
+    </header>
+    <div class="des__grid">
+      <ul class="dishes">{{block:destacados}}</ul>
+      <div class="carta">
+        <h3 class="carta__title">{{t:des.full}}</h3>
+        {{block:carta}}
+        <div class="carta__extras">{{block:extras}}</div>
+        <p class="fine">{{t:des.prices}}</p>
+      </div>
+    </div>
+    <div class="drinks">
+      <h3 class="drinks__title">{{t:des.drinks}}</h3>
+      <div class="drinks__cols">{{block:bebidas}}</div>
+      <p class="drinks__note">{{t:des.coffeeNote}}</p>
+    </div>
+    <p class="allergens"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v6M12 16.5v.01"/></svg>{{t:des.allergens}}</p>
+  </div>
+</section>
+
+<!-- 5 · PORCELANA -->
+<section class="tazas" aria-labelledby="taza-h">
+  <div class="wrap tazas__head">
+    <h2 id="taza-h">{{t:taza.h2}}</h2>
+    <p>{{t:taza.lead}}</p>
+    <blockquote><p>{{t:taza.quote}}</p><cite>{{t:taza.cite}}</cite></blockquote>
+  </div>
+  <div class="belt" data-belt>
+    <ul class="belt__track">{{block:tazas}}</ul>
+  </div>
+  <button class="belt__pause" type="button" aria-pressed="false" data-belt-pause><span class="sr">{{t:taza.pause}}</span><span aria-hidden="true">❚❚</span></button>
+</section>
+
+<!-- 6 · PAN Y ENCARGOS -->
+<section class="pan" id="pan" aria-labelledby="pan-h">
+  <div class="wrap pan__grid">
+    <figure class="pan__miga">
+      <img src="{{base}}img/pan-miga-1100.webp" srcset="{{base}}img/pan-miga-600.webp 600w, {{base}}img/pan-miga-1100.webp 1100w" sizes="(min-width: 960px) 50vw, 100vw" width="1100" height="825" alt="{{t:pan.migaAlt}}" loading="lazy">
+    </figure>
+    <div class="pan__text">
+      <p class="eyebrow">{{t:pan.eyebrow}}</p>
+      <h2 id="pan-h">{{t:pan.h2}}</h2>
+      <p>{{t:pan.lead}}</p>
+      <blockquote class="quote"><p>{{t:pan.quote}}</p><cite>{{t:pan.cite}}</cite></blockquote>
+    </div>
+    <figure class="pan__estante">
+      <img src="{{base}}img/pan-hogaza-900.webp" srcset="{{base}}img/pan-hogaza-500.webp 500w, {{base}}img/pan-hogaza-900.webp 900w" sizes="(min-width: 960px) 24vw, 50vw" width="900" height="1125" alt="{{t:pan.hogazaAlt}}" loading="lazy">
+    </figure>
+    <div class="order">
+      <figure class="order__img">
+        <img src="{{base}}img/encargo-medovik-500.webp" srcset="{{base}}img/encargo-medovik-500.webp 500w, {{base}}img/encargo-medovik-900.webp 900w" sizes="(min-width: 960px) 20vw, 40vw" width="500" height="625" alt="{{t:pan.orderAlt}}" loading="lazy">
+      </figure>
+      <div class="order__text">
+        <h3>{{t:pan.orderTitle}}</h3>
+        <p>{{t:pan.orderLead}}</p>
+        <a class="btn btn--green" href="tel:{{biz.phone}}">{{t:pan.call}} · {{biz.phoneLabel}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · VISÍTANOS -->
+<section class="visita" id="visita" aria-labelledby="vis-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">{{t:vis.eyebrow}}</p>
+      <h2 id="vis-h">{{t:vis.h2}}</h2>
+      <p class="lead">{{t:vis.lead}}</p>
+    </header>
+    <div class="visita__grid">
+      <figure class="visita__fachada">
+        <img src="{{base}}img/fachada-1200.webp" srcset="{{base}}img/fachada-700.webp 700w, {{base}}img/fachada-1200.webp 1200w, {{base}}img/fachada-1600.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1200" height="900" alt="{{t:vis.fachadaAlt}}" loading="lazy">
+      </figure>
+      <div class="visita__side">
+      <div class="card info">
+        <dl>
+          <div><dt>{{t:vis.address}}</dt><dd>{{biz.address}}<br>{{biz.postal}} {{biz.city}} ({{biz.region}})</dd></div>
+          <div><dt>{{t:vis.hours}}</dt><dd><span class="status status--inline" data-status><span class="status__dot"></span><span data-status-text>{{t:vis.hoursVal}}</span></span><br>{{t:vis.hoursVal}}<small>{{t:vis.holidays}}</small></dd></div>
+          <div><dt>{{t:vis.phone}}</dt><dd><a href="tel:{{biz.phone}}">{{biz.phoneLabel}}</a> · <a href="{{biz.instagram}}" target="_blank" rel="noopener">@nikiniki.bakery</a></dd></div>
+        </dl>
+        <div class="info__ctas">
+          <a class="btn btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener">{{t:vis.directions}} <span aria-hidden="true">→</span></a>
+          <a class="btn btn--line" href="{{biz.maps}}" target="_blank" rel="noopener">{{t:vis.maps}}</a>
+        </div>
+      </div>
+      <div class="card good">
+        <h3>{{t:vis.good}}</h3>
+        <ul>
+          <li><img src="{{base}}img/mascotas-240.webp" width="48" height="48" alt="{{t:vis.mascotasAlt}}" loading="lazy">{{t:vis.g1}}</li>
+          <li><span class="tick" aria-hidden="true"></span>{{t:vis.g2}}</li>
+          <li><span class="tick" aria-hidden="true"></span>{{t:vis.g3}}</li>
+          <li><span class="tick" aria-hidden="true"></span>{{t:vis.g4}}</li>
+        </ul>
+      </div>
+      </div>
+      <figure class="visita__barra">
+        <img src="{{base}}img/barra-500.webp" srcset="{{base}}img/barra-500.webp 500w, {{base}}img/barra-900.webp 900w" sizes="(min-width: 960px) 22vw, 50vw" width="500" height="625" alt="{{t:vis.barraAlt}}" loading="lazy">
+      </figure>
+      <div class="card when">
+        <h3>{{t:vis.when}}</h3>
+        <p>{{t:vis.whenLead}}</p>
+        {{block:afluencia}}
+        <p class="fine">{{t:vis.whenSource}}</p>
+      </div>
+      <div class="map">
+        <iframe title="{{t:vis.mapTitle}}" src="https://maps.google.com/maps?q=Cafeter%C3%ADa%20Niki%20%26%20Niki%2C%20Pla%C3%A7a%20Fontanella%2C%20D%C3%A9nia&z=17&hl={{lang}}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · MORAIRA DE NOCHE -->
+<section class="moraira" id="moraira" aria-labelledby="mor-h">
+  <div class="wrap moraira__grid">
+    <div class="moraira__text">
+      <p class="eyebrow eyebrow--sun">{{t:mor.eyebrow}}</p>
+      <h2 id="mor-h">{{t:mor.h2}}</h2>
+      <p>{{t:mor.lead}}</p>
+      <div class="tasting">
+        <h3>{{t:mor.tastingTitle}}</h3>
+        <p>{{t:mor.tastingLead}}</p>
+        <p class="tasting__price">{{t:mor.tastingPrice}}</p>
+      </div>
+      <p class="moraira__info">{{mor.address}} · {{mor.postal}} {{mor.city}}<br>{{t:mor.hours}}</p>
+      <div class="ctas">
+        <a class="btn btn--sun" href="tel:{{mor.phone}}">{{t:mor.call}} · {{mor.phoneLabel}}</a>
+        <a class="btn btn--line-light" href="{{mor.directions}}" target="_blank" rel="noopener">{{t:mor.dir}}</a>
+      </div>
+    </div>
+    <div class="moraira__pics">
+      <img class="m1" src="{{base}}img/moraira-sala-500.webp" srcset="{{base}}img/moraira-sala-500.webp 500w, {{base}}img/moraira-sala-900.webp 900w" sizes="(min-width: 960px) 22vw, 46vw" width="500" height="625" alt="{{t:mor.salaAlt}}" loading="lazy">
+      <img class="m2" src="{{base}}img/moraira-tartar-500.webp" srcset="{{base}}img/moraira-tartar-500.webp 500w, {{base}}img/moraira-tartar-900.webp 900w" sizes="(min-width: 960px) 22vw, 46vw" width="500" height="625" alt="{{t:mor.tartarAlt}}" loading="lazy">
+      <img class="m3" src="{{base}}img/moraira-degustacion-500.webp" srcset="{{base}}img/moraira-degustacion-500.webp 500w, {{base}}img/moraira-degustacion-900.webp 900w" sizes="(min-width: 960px) 18vw, 40vw" width="500" height="625" alt="{{t:mor.degAlt}}" loading="lazy">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-foot>
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <span class="logo__mark logo__mark--big" role="img" aria-label="Niki & Niki"></span>
+      <p>{{t:foot.tag}}</p>
+    </div>
+    <div class="foot__col">
+      <h3>{{t:foot.denia}}</h3>
+      <p>{{biz.address}}, {{biz.postal}} {{biz.city}}<br>{{t:foot.every}}<br><a href="tel:{{biz.phone}}">{{biz.phoneLabel}}</a></p>
+    </div>
+    <div class="foot__col">
+      <h3>{{t:foot.moraira}}</h3>
+      <p>{{mor.address}}, {{mor.postal}} {{mor.city}}<br>{{t:mor.hours}}<br><a href="tel:{{mor.phone}}">{{mor.phoneLabel}}</a></p>
+    </div>
+    <div class="foot__col">
+      <h3>Instagram</h3>
+      <p><a href="{{biz.instagram}}" target="_blank" rel="noopener">@nikiniki.bakery</a></p>
+      <p><a href="{{otherUrl}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang="{{otherLang}}">{{t:lang.other}}</a></p>
+    </div>
+    <div class="foot__seal" aria-hidden="true">{{block:footseal}}</div>
+  </div>
+  <p class="wrap foot__note">{{t:foot.note}}</p>
+</footer>
+
+<nav class="bar" aria-label="{{t:bar.go}}" data-bar>
+  <span class="status status--bar" data-status><span class="status__dot"></span><span data-status-short>8–17 h</span></span>
+  <a class="bar__btn" href="tel:{{biz.phone}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>{{t:bar.call}}</a>
+  <a class="bar__btn bar__btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>{{t:bar.go}}</a>
+</nav>
+
+<script id="i18n" type="application/json">{{clientI18n}}</script>
+<script id="vitrina-data" type="application/json">{{vitrinaJson}}</script>
+<script src="{{base}}main.js" defer></script>
+</body>
+</html>
