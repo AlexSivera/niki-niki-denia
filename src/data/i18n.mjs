@@ -86,7 +86,7 @@ export const T = {
   'vit.call': { es: 'Llamar', en: 'Call' },
 
   'des.eyebrow': { es: 'Desayunos y brunch', en: 'Breakfast & brunch' },
-  'des.h2': { es: 'Hasta las 17:00, y sin mirar el reloj.', en: 'Until 5 pm, and no clock-watching.' },
+  'des.h2': { es: 'Huevos turcos, shakshuka y syrniki, de 8:00 a 17:00.', en: 'Turkish eggs, shakshuka and syrniki, from 8 am to 5 pm.' },
   'des.lead': {
     es: 'Todo lo salado va sobre nuestro pan de masa madre. El salmón lo curamos en casa, y el requesón de los syrniki también lo hacemos aquí.',
     en: 'Everything savoury comes on our own sourdough. We cure the salmon in-house, and make the cottage cheese for the syrniki here too.',
