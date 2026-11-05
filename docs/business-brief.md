@@ -103,3 +103,13 @@ Hospitalaria al estilo de «la casa de la abuela», pero con gusto contemporáne
 - **Dénia**: 4,3 ★ con 759 reseñas. Temas: panadería (33), café de especialidad (29), tarta de queso (28), pan de masa madre (23), shakshuka (15), syrniki (13), medovik (10), porcelana (10), huevo escalfado (9) y canelé (8). La ficha tiene un botón **«Pedir online»** que lleva a **Glovo** (recogida y entrega). No se ha encontrado el enlace directo a su tienda en Glovo.
 - **Moraira**: 4,6 ★ con 307 reseñas. La ficha tiene **«Reservar una mesa»**, con reserva online gestionada por **CoverManager** (zonas «Barra» y «Terrace»). Horario sin cambios.
 - **Instagram**: la cuenta se llama ahora «NIKI&NIKI BAKERY & KITCHEN» (4.875 seguidores). En octubre publicaron la «New Evening Menu» de Moraira: pechuga de pato con puré de azafrán, lechuga romana a la brasa con tahini, paté de hígado de pollo con grosella negra, carpaccio de atún, guacamole con pimientos de Padrón, gildas y curry a la española con sobrasada.
+
+## Moraira: qué es exactamente (investigado el 5/11/2026)
+
+Misma marca y mismo Instagram que Dénia. Facebook de la marca: «Gourmet Bakery · sourdough bread · Speciality Coffee · Breakfast and lunch», con las dos direcciones (Plaza Fontanella 1 y Avenida de Paz 4). Bio de Instagram: «BREAKFAST • BAKERY • EVENING KITCHEN · DÉNIA & MORAIRA · Dinner in Moraira from 16:00».
+
+- **Por la mañana es lo mismo que Dénia.** Temas de sus reseñas en Google: hojaldre 36, café de especialidad 22, vinos naturales 12, pan de masa madre 11, huevos turcos 7, leche de avena 7, roll de canela 6, matcha 6, shakshuka 5, barista 5. Las reseñas citan pan, bollería, tartas, tostada de aguacate con salmón, sándwich de pastrami y tortilla de queso trufado. European Coffee Trip: «Espresso, Breakfast, Lunch, Plant-based milk».
+- **Lo que solo tiene Moraira:** cocina de noche de miércoles a domingo de 16:00 a 22:00 (la primera semana de septiembre era de 18:00 a 22:00; desde el 19/9 todos los posts dicen 16:00), vino natural (Raisin la lista como restaurante, bar y tienda de vinos, con referencias de Bodegas Cueva, Can Suriol y Finca Mont Roig) y reserva online.
+- **Abierto al menos desde finales de 2025** (las reseñas más antiguas que se ven son de «hace un año»). La cena empezó a finales de mayo de 2026 («new evening menu», 28/5) y se relanzó a finales de agosto.
+- Ficha de Google: «Niki&Niki Bakery», categoría Restaurante, 4,6 ★ (307), «propietarias mujeres», teléfono 625 02 63 00. Ese mismo teléfono es el que aparece en el Facebook de la marca.
+- **Sin confirmar:** si la carta de desayunos y la vitrina son idénticas a las de Dénia. Las historias destacadas «menu» y «breakfast» de Instagram piden iniciar sesión.

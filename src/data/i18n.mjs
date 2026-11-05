@@ -181,8 +181,8 @@ export const T = {
   'mor.eyebrow': { es: 'Moraira · mié–dom · 16–22 h', en: 'Moraira · Wed–Sun · 4–10 pm' },
   'mor.h2': { es: 'Cuando cerramos en Dénia, se encienden las luces en Moraira.', en: 'When Dénia closes, the lights come on in Moraira.' },
   'mor.lead': {
-    es: 'Nuestra segunda casa, en la Av. de la Paz de Moraira, abre también por la noche de miércoles a domingo: platos para compartir, cocina hecha casi entera desde cero y vino natural. Puedes reservar mesa en la barra o en la terraza.',
-    en: 'Our second home, on Av. de la Paz in Moraira, also opens in the evening from Wednesday to Sunday: plates to share, cooking done almost entirely from scratch, and natural wine. You can book a table at the bar or on the terrace.',
+    es: 'Nuestra segunda casa está en la Av. de la Paz de Moraira. Por la mañana, como en Dénia: hojaldre, pan de masa madre, café de especialidad y desayunos como los huevos turcos o la shakshuka. De miércoles a domingo, además, cocina de noche: platos para compartir, hechos casi enteros desde cero, y vino natural. Puedes reservar mesa en la barra o en la terraza.',
+    en: 'Our second home is on Av. de la Paz in Moraira. In the morning it’s just like Dénia: laminated pastries, sourdough, specialty coffee and breakfasts such as Turkish eggs or shakshuka. From Wednesday to Sunday there’s also an evening kitchen: plates to share, made almost entirely from scratch, and natural wine. You can book a table at the bar or on the terrace.',
   },
   'mor.menuTitle': { es: 'Este otoño, de la cocina de noche', en: 'This autumn, from the evening kitchen' },
   'mor.menu': {
