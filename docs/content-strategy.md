@@ -18,7 +18,7 @@ Lo que se evita: «calidad y profesionalidad», «experiencia única», «pasió
 6. **El pan**: hogazas enteras o medias, y encargos.
 7. **Prueba social**: los temas que Google detecta en 745 reseñas, más dos citas literales cortas.
 8. **Visítanos**: dirección, cuándo venir, perros, terraza y mapa.
-9. **Moraira de noche**: horario, menú degustación (25 €, o 28 € con copa) y teléfono.
+9. **Moraira de noche**: horario, platos de la carta de noche publicados en Instagram, **reserva online** (CoverManager vía Google) y teléfono. El menú degustación de 25 € se retiró de la web el 5/11/2026 hasta confirmarlo.
 
 Lo que se ha dejado fuera a propósito: la carta antigua de «Bistro 15–22 h» (ya no existe en Dénia), los precios de café (sin verificar), las quejas, los nombres del equipo (rotan), el mural de Venecia (bonito, pero no cuenta nada del negocio) y el horario de 20:00 que aparecía en directorios antiguos.
 

@@ -5,26 +5,32 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const T = JSON.parse($('#i18n').textContent);
   const base = $('script[src$="main.js"]').getAttribute('src').replace('main.js', '');
+  document.documentElement.classList.add('js');
 
   /* Preferencia de idioma (solo para recordarla al volver) */
   $$('[data-lang]').forEach((a) => a.addEventListener('click', () => {
     try { localStorage.setItem('nn-lang', a.dataset.lang); } catch (e) { /* sin almacenamiento */ }
   }));
 
-  /* Estado abierto/cerrado con la hora de Dénia (Europe/Madrid). Abre todos los días de 8:00 a 17:00. */
+  /* Estado abierto/cerrado con la hora de España (Europe/Madrid).
+     Dénia: todos los días de 8:00 a 17:00. Moraira: lun–mar de 8:00 a 15:30, mié–dom de 8:00 a 22:00. */
   const OPEN = 8 * 60, CLOSE = 17 * 60;
+  const paint = (sel, open, text) => $$(sel).forEach((el) => {
+    el.classList.toggle('is-open', open);
+    el.classList.toggle('is-closed', !open);
+    const t = $('[data-status-text]', el); if (t) t.textContent = (el.dataset.prefix || '') + text;
+    const s = $('[data-status-short]', el); if (s) s.textContent = open ? T['status.short.open'] : T['status.short.closed'];
+  });
   function status() {
-    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
-    const h = +parts.find((p) => p.type === 'hour').value, m = +parts.find((p) => p.type === 'minute').value;
-    const now = h * 60 + m;
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    const get = (k) => parts.find((p) => p.type === k).value;
+    const now = +get('hour') * 60 + +get('minute');
     const open = now >= OPEN && now < CLOSE;
-    const text = open ? T['status.open'] : now < OPEN ? T['status.soon'] : T['status.closed'];
-    $$('[data-status]').forEach((el) => {
-      el.classList.toggle('is-open', open);
-      el.classList.toggle('is-closed', !open);
-      const t = $('[data-status-text]', el); if (t) t.textContent = text;
-      const s = $('[data-status-short]', el); if (s) s.textContent = open ? T['status.short.open'] : T['status.short.closed'];
-    });
+    paint('[data-status]', open, open ? T['status.open'] : now < OPEN ? T['status.soon'] : T['status.closed']);
+    const short = ['Mon', 'Tue'].includes(get('weekday'));
+    const mClose = short ? 15 * 60 + 30 : 22 * 60;
+    const mOpen = now >= OPEN && now < mClose;
+    paint('[data-mstatus]', mOpen, mOpen ? T['mstatus.open'].replace('%h', short ? '15:30' : '22:00') : T['mstatus.closed']);
   }
   status();
   setInterval(status, 60000);
@@ -70,8 +76,46 @@
     $$('[data-filter]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
     const f = b.dataset.filter;
     pieces.forEach((p) => p.classList.toggle('is-hidden', f !== 'all' && !p.dataset.tags.split(' ').includes(f)));
-    const shelf = $('[data-shelf]'); if (shelf) shelf.scrollLeft = 0;
+    const sh = $('[data-shelf]'); if (sh) sh.scrollLeft = 0;
   }));
+
+  /* Vitrina en móvil: indicador de cuánto queda por ver en la balda */
+  const shelf = $('[data-shelf]');
+  const shelfBar = $('[data-shelf-bar]');
+  if (shelf && shelfBar) {
+    const prog = () => {
+      const max = shelf.scrollWidth - shelf.clientWidth;
+      shelfBar.hidden = max < 8;
+      shelfBar.style.setProperty('--w', `${Math.min(100, (shelf.clientWidth / shelf.scrollWidth) * 100)}%`);
+      shelfBar.style.setProperty('--x', `${max > 0 ? (shelf.scrollLeft / max) * (100 - (shelf.clientWidth / shelf.scrollWidth) * 100) : 0}%`);
+    };
+    shelf.addEventListener('scroll', prog, { passive: true });
+    addEventListener('resize', prog);
+    $$('[data-filter]').forEach((b) => b.addEventListener('click', () => requestAnimationFrame(prog)));
+    prog();
+  }
+
+  /* Carta de desayuno: pestañas (con flechas del teclado) */
+  const tabs = $$('[data-tabs] [role="tab"]');
+  const selectTab = (tab, focus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', (e) => {
+      const k = { ArrowRight: 1, ArrowLeft: -1, Home: -i, End: tabs.length - 1 - i }[e.key];
+      if (k === undefined) return;
+      e.preventDefault();
+      selectTab(tabs[(i + k + tabs.length) % tabs.length], true);
+    });
+  });
+  if (tabs.length) selectTab(tabs[0]);
 
   /* Vitrina: ficha de cada pieza */
   const data = JSON.parse($('#vitrina-data').textContent);
@@ -110,6 +154,13 @@
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => bar.classList.toggle('is-away', e.isIntersecting), { threshold: 0.05 }).observe(foot);
 
+    /* En la sección de Moraira, la barra pasa a ser la de Moraira: reservar y cómo llegar */
+    const mor = document.getElementById('moraira');
+    if (mor) new IntersectionObserver(([e]) => {
+      $$('[data-bar-set]', bar).forEach((set) => { set.hidden = (set.dataset.barSet === 'moraira') !== e.isIntersecting; });
+      bar.classList.toggle('is-night', e.isIntersecting);
+    }, { rootMargin: '-40% 0px -40% 0px' }).observe(mor);
+
     /* Sección actual en el menú */
     const current = new IntersectionObserver((entries) => entries.forEach((e) => {
       const a = $(`.nav a[href="#${e.target.id}"]`);
@@ -120,7 +171,7 @@
 
   /* Aparición suave al entrar en pantalla */
   if (!reduce && 'IntersectionObserver' in window) {
-    const els = $$('.sec-head, .piece, .dish, .carta, .drinks, .tazas__head, .pan__text, .pan__miga, .order, .visita .card, .visita__fachada, .map, .moraira__text, .moraira__pics img, .proof__list li');
+    const els = $$('.sec-head, .piece, .dish, .carta, .drinks, .tazas__head, .pan__text, .pan__miga, .order, .visita .card, .visita__fachada, .map, .moraira__text, .moraira__pics img, .proof__quotes li');
     els.forEach((el) => {
       el.classList.add('rv');
       const sib = el.parentElement ? [...el.parentElement.children].indexOf(el) : 0;

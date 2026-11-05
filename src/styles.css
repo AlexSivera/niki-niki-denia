@@ -185,16 +185,21 @@ blockquote { margin: 0; }
 
 /* ───────── 2 · Reseñas ───────── */
 .proof { background: var(--sun); color: var(--ink); padding: clamp(48px, 7vw, 84px) 0; position: relative; }
-.proof__in { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: 18px 56px; align-items: start; }
+.proof__in { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 26px 56px; align-items: start; }
 .proof__rating { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
 .proof__big { font: 400 48px/1 var(--serif); }
 .proof__stars { letter-spacing: 2px; font-size: 16px; }
-.proof h2 { font-size: clamp(26px, 2.6vw, 36px); max-width: 18ch; }
-.proof__list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1.5px solid rgba(27,26,23,.85); }
-.proof__list li { padding: 18px 16px 18px 0; border-bottom: 1px solid rgba(27,26,23,.25); display: grid; gap: 2px; }
-.proof__n { font: 400 clamp(38px, 4vw, 56px)/1 var(--serif); }
-.proof__w { font-size: 15px; font-weight: 500; }
-.proof__src { grid-column: 2; font-size: 12px; opacity: .7; }
+.proof h2 { font-size: clamp(26px, 2.6vw, 36px); max-width: 14ch; }
+/* Tres citas literales, como frases subrayadas en la carta */
+.proof__quotes { display: grid; border-top: 1.5px solid rgba(27,26,23,.85); }
+.proof__quotes li { padding: 16px 0; border-bottom: 1px solid rgba(27,26,23,.22); }
+.proof__quotes p { font: 400 clamp(22px, 2.3vw, 31px)/1.2 var(--serif); letter-spacing: -0.01em; }
+.proof__foot { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 18px; align-items: baseline; }
+.proof__label { font: 700 11px var(--sans); font-variation-settings: 'wdth' 125; letter-spacing: .16em; text-transform: uppercase; }
+.proof__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.proof__tags li { font-size: 14px; font-weight: 500; padding: 5px 11px; border: 1px solid rgba(27,26,23,.35); border-radius: 999px; white-space: nowrap; }
+.proof__n { font-weight: 700; font-variant-numeric: tabular-nums; margin-left: 2px; opacity: .7; }
+.proof__src { grid-column: 1 / -1; font-size: 12px; opacity: .72; }
 
 /* ───────── 3 · La vitrina ───────── */
 .vitrina {
@@ -235,6 +240,7 @@ blockquote { margin: 0; }
   box-shadow: 0 14px 18px -10px rgba(0,0,0,.45);
 }
 .piece.is-hidden { display: none; }
+.shelf__bar { display: none; }
 .piece__btn { all: unset; box-sizing: border-box; cursor: pointer; display: grid; justify-items: center; text-align: center; width: 100%; padding: 6px 4px 18px; border-radius: 14px; position: relative; }
 .piece__btn:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
 .plate {
@@ -308,6 +314,15 @@ blockquote { margin: 0; }
 .carta::before { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(168,132,66,.35); border-radius: 3px; pointer-events: none; }
 .carta__title { font-size: 30px; color: var(--awning); text-align: center; margin-bottom: 8px; }
 .carta__group { margin-top: 28px; }
+.carta__group:focus-visible { outline-offset: 8px; }
+.carta__group[hidden] { display: none; }
+/* Pestañas: solo con JavaScript; sin él, la carta se lee entera */
+.carta__tabs { display: none; }
+.js .carta__tabs { display: flex; justify-content: center; gap: 6px; margin: 18px auto 0; padding: 4px; width: fit-content; max-width: 100%; border-radius: 999px; background: rgba(168,132,66,.12); position: relative; z-index: 1; }
+.carta__tabs button { min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; font-weight: 600; font-size: 14.5px; color: var(--awning); cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s; }
+.carta__tabs button:hover { background: rgba(29,58,46,.08); }
+.carta__tabs button[aria-selected='true'] { background: var(--awning); color: var(--cream); }
+.js .carta__group { margin-top: 22px; }
 .carta h4, .carta__extras h4, .drinks h4 {
   font: 700 12px var(--sans); font-variation-settings: 'wdth' 125; letter-spacing: .16em; text-transform: uppercase;
   color: var(--terracotta); padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 4px;
@@ -325,11 +340,17 @@ blockquote { margin: 0; }
 .carta__extras li { display: flex; justify-content: space-between; gap: 8px; }
 .carta__extras span { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--awning); }
 
-.drinks { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.6fr); gap: 20px 56px; align-items: start; }
+.drinks { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.6fr); gap: 20px 56px; align-items: center; }
+.drinks__head { display: grid; gap: 22px; justify-items: start; }
 .drinks__title { font-size: clamp(30px, 3.2vw, 44px); color: var(--awning); }
-.drinks__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.drinks li { padding: 7px 0; font-size: 15.5px; border-bottom: 1px solid rgba(217,208,192,.6); }
-.drinks__note { grid-column: 2; font-size: 14.5px; color: var(--muted); max-width: 64ch; }
+.drinks__pic { width: min(220px, 100%); aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 6px #FFFDF8, 0 0 0 7.5px rgba(168,132,66,.45), 0 22px 30px -20px rgba(40,30,10,.55); }
+.drinks__pic img { width: 100%; height: 100%; object-fit: cover; }
+.drinks__body { display: grid; gap: 22px; }
+.drinks__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+/* Bebidas en línea, separadas por puntos: se leen como una carta y ocupan poco */
+.drinks__cols ul { display: flex; flex-wrap: wrap; gap: 4px 0; padding-top: 10px; font-size: 15.5px; line-height: 1.5; }
+.drinks__cols li:not(:last-child)::after { content: '·'; margin: 0 9px; color: var(--gilt); }
+.drinks__note { font-size: 14.5px; color: var(--muted); max-width: 64ch; }
 .allergens { display: flex; gap: 12px; align-items: flex-start; margin-top: 40px; padding: 16px 20px; background: var(--peach-2); border-radius: 12px; font-size: 14.5px; max-width: 760px; }
 .allergens svg { width: 22px; height: 22px; flex: none; fill: none; stroke: var(--terracotta); stroke-width: 1.8; stroke-linecap: round; }
 
@@ -366,7 +387,9 @@ blockquote { margin: 0; }
 .order__text { padding: clamp(26px, 3.5vw, 44px); display: grid; align-content: center; gap: 16px; }
 .order__text h3 { font-size: clamp(26px, 2.6vw, 36px); color: var(--awning); }
 .order__text p { color: #4C3A2E; }
-.order__text .btn { justify-self: start; }
+.order__text .btn { justify-self: start; white-space: nowrap; }
+.order__glovo { font-size: 14px; color: #5E4A3B !important; }
+.order__glovo b { color: var(--awning); }
 
 /* ───────── 7 · Visítanos ───────── */
 .visita { padding: clamp(80px, 11vw, 140px) 0; background: linear-gradient(180deg, var(--marble), var(--peach-2) 60%, var(--marble)); }
@@ -416,7 +439,7 @@ blockquote { margin: 0; }
 .tasting::before { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(168,132,66,.3); border-radius: 10px; pointer-events: none; }
 .tasting h3 { font-size: 24px; color: var(--sun); margin-bottom: 8px; }
 .tasting p { font-size: 15px; color: rgba(244,233,207,.82); }
-.tasting__price { margin-top: 10px; font: 600 17px var(--sans) !important; color: #FFF6E2 !important; }
+.tasting__note { margin-top: 10px; font-size: 13px !important; color: rgba(244,233,207,.6) !important; }
 .moraira__info { margin-top: 24px; font-size: 14.5px; color: rgba(244,233,207,.7); }
 .moraira__pics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .moraira__pics img { border-radius: var(--r); width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
@@ -437,6 +460,7 @@ blockquote { margin: 0; }
 
 /* Barra móvil */
 .bar { display: none; }
+.hero__cap { display: none; }
 
 /* Aparición */
 .rv { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--d, 0) * 70ms); }
@@ -475,22 +499,25 @@ blockquote { margin: 0; }
   .hero h1 { max-width: 16ch; }
 
   .proof__in { grid-template-columns: 1fr; }
-  .proof__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .proof__src { grid-column: 1; }
+  .proof__foot { grid-template-columns: 1fr; }
+  .drinks { grid-template-columns: 1fr; }
+  .drinks__head { grid-template-columns: minmax(0, 1fr) 120px; align-items: center; width: 100%; }
+  .drinks__pic { width: 120px; justify-self: end; }
 
   .vitrina__head { grid-template-columns: 1fr; }
-  .shelf { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; margin-inline: calc(-1 * var(--gut)); padding-inline: var(--gut); scrollbar-width: none; }
+  .shelf { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gut); gap: 0; margin-inline: calc(-1 * var(--gut)); padding-inline: var(--gut); scrollbar-width: none; }
   .shelf::-webkit-scrollbar { display: none; }
   .piece { flex: 0 0 46%; scroll-snap-align: start; }
+  .shelf__bar { display: block; position: relative; height: 3px; margin-top: 18px; border-radius: 3px; background: rgba(244,233,207,.18); overflow: hidden; }
+  .shelf__bar[hidden] { display: none; }
+  .shelf__bar span { position: absolute; top: 0; bottom: 0; left: var(--x, 0%); width: var(--w, 30%); border-radius: 3px; background: var(--sun); }
   .vitrina__foot { grid-template-columns: 1fr; }
 
   .des__grid { grid-template-columns: 1fr; }
-  .dishes { position: static; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin-inline: calc(-1 * var(--gut)); padding: 0 var(--gut) 8px; scrollbar-width: none; }
+  .dishes { position: static; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gut); gap: 16px; margin-inline: calc(-1 * var(--gut)); padding: 0 var(--gut) 8px; scrollbar-width: none; }
   .dishes::-webkit-scrollbar { display: none; }
   .dish { flex: 0 0 62%; scroll-snap-align: start; }
   .dish:nth-child(2n) { margin-top: 0; }
-  .drinks { grid-template-columns: 1fr; }
-  .drinks__note { grid-column: 1; }
 
   .tazas__head { grid-template-columns: 1fr; }
   .tazas h2 { grid-row: auto; }
@@ -518,7 +545,14 @@ blockquote { margin: 0; }
     transition: transform .4s var(--ease), opacity .3s;
   }
   .bar.is-away { transform: translateY(140%); opacity: 0; }
-  .status--bar { padding: 0 8px 0 10px; font-size: 13px; margin-right: auto; }
+  .bar__set { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+  .bar__set[hidden] { display: none; }
+  .bar.is-night { background: rgba(27,26,23,.92); border-color: rgba(244,233,207,.14); }
+  .bar.is-night .status--bar { color: var(--cream); }
+  .bar.is-night .bar__btn:not(.bar__btn--sun) { background: rgba(244,233,207,.12); }
+  .status--bar { padding: 0 6px 0 10px; font-size: 13px; margin-right: auto; display: inline-grid; grid-template-columns: auto auto; column-gap: 7px; line-height: 1.15; }
+  .status--bar .status__dot { grid-row: span 2; align-self: center; }
+  .bar__where { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .65; }
   .bar__btn { display: inline-flex; align-items: center; gap: 7px; min-height: 46px; padding: 0 15px; white-space: nowrap; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14.5px; background: var(--awning); color: var(--cream); }
   .bar__btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
   .bar__btn--sun { background: var(--sun); color: var(--ink); }
@@ -540,16 +574,28 @@ blockquote { margin: 0; }
   .hero__tables { width: 78%; margin: 0 auto 8px; }
   .legend, .pin { display: none; }
   .hero .eyebrow { margin-bottom: 12px; }
+  .hide-s { display: none; }
+  .hero__cap { display: block; order: -1; margin: 6px auto 14px; max-width: 34ch; text-align: center; font-size: 13px; line-height: 1.45; color: var(--muted); }
+  .proof__quotes p { font-size: 21px; }
+  .proof__tags { gap: 6px; }
+  .proof__tags li { font-size: 13px; padding: 4px 10px; }
+  .proof__tags li:nth-child(n+7) { display: none; }
+  .good ul { grid-template-columns: 1fr; }
+  .bar { gap: 6px; }
+  .bar__set { gap: 6px; }
+  .bar__btn { padding: 0 13px; font-size: 14px; }
+  .hero__cap b { color: var(--awning); font-weight: 600; }
+  .proof__quotes li { padding: 13px 0; }
+  .carta__tabs button { padding: 0 13px; font-size: 14px; }
   .hero .lead { font-size: 16px; }
   .hero__meta { gap: 8px 16px; font-size: 13px; }
   .ctas .btn { flex: 1 1 100%; }
-  .proof__list li { padding-right: 10px; }
   .piece { flex-basis: 64%; }
   .carta { padding: 26px 20px; }
   .carta::before { inset: 6px; }
   .carta__extras ul { grid-template-columns: 1fr; }
-  .drinks__cols { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .drinks li { font-size: 14px; }
+  .drinks__cols { grid-template-columns: 1fr; gap: 14px; }
+  .drinks__cols ul { font-size: 14.5px; }
   .cup, .cup img { width: 130px; height: 130px; }
   .belt__track { gap: 18px; }
   .order { grid-template-columns: 1fr; }

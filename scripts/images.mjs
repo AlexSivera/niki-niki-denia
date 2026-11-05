@@ -22,7 +22,8 @@ const JOBS = [
   // Hero: las dos mesas (Instagram oficial)
   ['ig/DdCVLtvsrln_0.jpg', 'mesa-syrniki', [560, 900, 1400], { ...SQ, fx: 0.5, fy: 0.5, z: 1.04, q: 0.82 }],
   ['ig/DeB7SX6iE1G_0.jpg', 'mesa-cafe', [360, 600, 900], { ...SQ, fx: 0.56, fy: 0.665, z: 1.42 }],
-  ['ig/DdCVLtvsrln_0.jpg', 'og', [1200], { ar: 1200 / 630, fx: 0.5, fy: 0.5, z: 1 }],
+  // Imagen para compartir en JPG: WhatsApp y algunas redes no muestran bien la vista previa en WebP.
+  ['ig/DdCVLtvsrln_0.jpg', 'og', [1200], { ar: 1200 / 630, fx: 0.5, fy: 0.5, z: 1, fmt: 'jpeg', q: 0.84 }],
 
   // Vitrina (cuadradas: se muestran como plato redondo)
   ['gm/gm070.jpg', 'vit-medovik', [420, 760], { ...SQ, fx: 0.5, fy: 0.56, z: 1.06, tone: 1 }],
@@ -39,37 +40,37 @@ const JOBS = [
   // Desayunos
   ['gm/gm113.jpg', 'des-turcos', [480, 900], { ...SQ, fx: 0.42, fy: 0.5, z: 1, tone: 1 }],
   ['gm/gm157.jpg', 'des-shakshuka', [480, 900], { ...SQ, fx: 0.55, fy: 0.45, z: 1, tone: 1 }],
-  ['ig/DdCVLtvsrln_0.jpg', 'des-syrniki', [480, 900], { ...SQ, fx: 0.63, fy: 0.74, z: 2.1 }],
-  ['gm/gm021.jpg', 'des-tostada', [480, 900], { ...SQ, fx: 0.62, fy: 0.62, z: 1.2, tone: 1 }],
+  ['gm/gm122.jpg', 'des-syrniki', [480, 900], { ...SQ, fx: 0.58, fy: 0.86, z: 1.5, tone: 1 }],
+  ['gm/gm129.jpg', 'des-tostada', [480, 900], { ...SQ, fx: 0.5, fy: 0.45, z: 1.25, tone: 1 }],
+  ['gm/gm173.jpg', 'te-servicio', [480, 900], { ...SQ, fx: 0.55, fy: 0.74, z: 1.7, tone: 1 }],
 
   // Tazas (círculos)
-  ['gm/gm075.jpg', 'taza-1', [320], { ...SQ, fx: 0.5, fy: 0.45, z: 1.0, tone: 1 }],
+  ['gm/gm064.jpg', 'taza-1', [320], { ...SQ, fx: 0.78, fy: 0.36, z: 2.0, tone: 1 }],
   ['gm/gm177.jpg', 'taza-2', [320], { ...SQ, fx: 0.52, fy: 0.5, z: 1.15, tone: 1 }],
-  ['gm/gm102.jpg', 'taza-3', [320], { ...SQ, fx: 0.52, fy: 0.36, z: 1.35, tone: 1 }],
+  ['gm/gm057.jpg', 'taza-3', [320], { ...SQ, fx: 0.5, fy: 0.2, z: 1.8, tone: 1 }],
   ['gm/gm184.jpg', 'taza-4', [320], { ...SQ, fx: 0.33, fy: 0.6, z: 1.9, tone: 1 }],
-  ['gm/gm154.jpg', 'taza-5', [320], { ...SQ, fx: 0.52, fy: 0.5, z: 1.3, tone: 1 }],
+  ['gm/gm188.jpg', 'taza-5', [320], { ...SQ, fx: 0.55, fy: 0.56, z: 1.6, tone: 1 }],
   ['gm/gm181.jpg', 'taza-6', [320], { ...SQ, fx: 0.42, fy: 0.62, z: 1.6, tone: 1 }],
   ['gm/gm069.jpg', 'taza-7', [320], { ...SQ, fx: 0.42, fy: 0.55, z: 1.45, tone: 1 }],
-  ['gm/gm147.jpg', 'taza-8', [320], { ...SQ, fx: 0.47, fy: 0.55, z: 1.55, tone: 1 }],
+  ['gm/gm141.jpg', 'taza-8', [320], { ...SQ, fx: 0.55, fy: 0.6, z: 1.5, tone: 1 }],
   ['ig/DcrGY-Xo1Wz_0.jpg', 'taza-9', [320], { ...SQ, fx: 0.33, fy: 0.72, z: 2.1 }],
 
   // Pan y encargos
-  ['gm/gm132.jpg', 'pan-miga', [600, 1100], { ar: 4 / 3, fx: 0.5, fy: 0.5, z: 1, tone: 1 }],
-  ['gm/gm054.jpg', 'pan-hogaza', [500, 900], { ar: 4 / 5, fx: 0.52, fy: 0.5, z: 1, tone: 1 }],
-  ['gm/gm070.jpg', 'encargo-medovik', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1, tone: 1 }],
+  ['gm/gm132.jpg', 'pan-miga', [600, 1100], { ar: 4 / 3, fx: 0.56, fy: 0.43, z: 1.2, tone: 1, light: 1 }],
+  ['gm/gm054.jpg', 'pan-hogaza', [500, 900], { ar: 4 / 5, fx: 0.52, fy: 0.5, z: 1, tone: 1, light: 1 }],
+  ['gm/gm155.jpg', 'encargo-tartas', [500, 900], { ar: 4 / 5, fx: 0.55, fy: 0.62, z: 1.2, tone: 1 }],
 
   // Local
   ['gm/gm109.jpg', 'fachada', [700, 1200, 1600], { ar: 4 / 3, fx: 0.5, fy: 0.5, z: 1, tone: 1 }],
   ['gm/gm020.jpg', 'barra', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.55, z: 1, tone: 1 }],
-  ['gm/gm149.jpg', 'mascotas', [240], { ...SQ, fx: 0.55, fy: 0.5, z: 1.45 }],
 
   // Moraira (Instagram oficial)
-  ['ig/DdvrVLaIHPw_0.jpg', 'moraira-tartar', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1 }],
   ['ig/DY4RS7CI_PG_0.jpg', 'moraira-sala', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1 }],
-  ['ig/DdobieeoVkO_0.jpg', 'moraira-degustacion', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1 }],
+  ['ig/DejOrzdI53I_0.jpg', 'moraira-mesa', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1 }],
+  ['ig/DeEz-B_IGE3_0.jpg', 'moraira-pato', [500, 900], { ar: 4 / 5, fx: 0.5, fy: 0.5, z: 1 }],
 ];
 
-const filter = process.argv[2];
+const filter = process.argv[2] ? process.argv[2].split(',') : null;
 const toUrl = (p) => 'file:///' + p.split(path.sep).join('/');
 
 const browser = await chromium.launch({ channel: 'chrome', args: ['--allow-file-access-from-files'] });
@@ -80,7 +81,7 @@ await page.goto(toUrl(tmp));
 fs.mkdirSync(OUT, { recursive: true });
 
 for (const [src, name, widths, opt] of JOBS) {
-  if (filter && !name.includes(filter)) continue;
+  if (filter && !filter.some((f) => name.includes(f))) continue;
   for (const w of widths) {
     const data = await page.evaluate(async ({ url, w, opt }) => {
       const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
@@ -96,18 +97,18 @@ for (const [src, name, widths, opt] of JOBS) {
       c.width = Math.round(cw * scale); c.height = Math.round(ch * scale);
       const g = c.getContext('2d');
       g.imageSmoothingQuality = 'high';
-      if (opt.tone) g.filter = 'saturate(0.88) contrast(1.04) sepia(0.06)';
+      if (opt.tone) g.filter = 'saturate(0.88) contrast(1.04) sepia(0.06)' + (opt.light ? ' brightness(1.08)' : '');
       g.drawImage(img, sx, sy, cw, ch, 0, 0, c.width, c.height);
-      return c.toDataURL('image/webp', opt.q || 0.8);
+      return c.toDataURL(`image/${opt.fmt || 'webp'}`, opt.q || 0.8);
     }, { url: toUrl(path.join(SRC, src)), w, opt });
-    const file = path.join(OUT, `${name}-${w}.webp`);
+    const file = path.join(OUT, `${name}-${w}.${opt.fmt === 'jpeg' ? 'jpg' : 'webp'}`);
     fs.writeFileSync(file, Buffer.from(data.split(',')[1], 'base64'));
     console.log(`${path.relative(root, file)}  ${(fs.statSync(file).size / 1024).toFixed(0)} KB`);
   }
 }
 
 // Logo: máscara del logo caligráfico real (sale de la carta impresa) y favicon/icono como su avatar de Instagram.
-if (!filter || filter === 'logo') {
+if (!filter || filter.includes('logo')) {
   fs.copyFileSync(path.join(SRC, 'logo-script.png'), path.join(OUT, 'logo.png'));
   for (const size of [32, 180, 512]) {
     const data = await page.evaluate(async ({ url, size }) => {

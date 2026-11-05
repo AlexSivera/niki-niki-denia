@@ -24,8 +24,15 @@ export const T = {
   'status.closed': { es: 'Cerrado · mañana desde las 8:00', en: 'Closed · tomorrow from 8:00' },
   'status.short.open': { es: 'Abierto', en: 'Open' },
   'status.short.closed': { es: 'Cerrado', en: 'Closed' },
+  'status.where': { es: 'Dénia · ', en: 'Dénia · ' },
+  'mstatus.open': { es: 'Moraira · abierto hasta las %h', en: 'Moraira · open until %h' },
+  'mstatus.closed': { es: 'Moraira · cerrado ahora', en: 'Moraira · closed now' },
 
-  'hero.eyebrow': { es: 'Bakery · Food · Wine — Plaça Fontanella, Dénia', en: 'Bakery · Food · Wine — Plaça Fontanella, Dénia' },
+  'hero.eyebrow': { es: '<span class="hide-s">Bakery · Food · Wine — </span>Plaça Fontanella, Dénia', en: '<span class="hide-s">Bakery · Food · Wine — </span>Plaça Fontanella, Dénia' },
+  'hero.cap': {
+    es: '<b>En esta mesa:</b> syrniki de requesón casero, mermelada de grosella negra y café en porcelana con flores.',
+    en: '<b>On this table:</b> house cottage-cheese syrniki, blackcurrant jam and coffee in floral porcelain.',
+  },
   'hero.h1': {
     es: 'Masa madre, tartas del Báltico y café en <em>porcelana antigua</em>.',
     en: 'Sourdough, Baltic cakes and coffee in <em>vintage porcelain</em>.',
@@ -54,10 +61,13 @@ export const T = {
   'hero.a4': { es: 'Matcha con zumo de naranja', en: 'Matcha with orange juice' },
   'hero.a5': { es: 'Café con leche, grano de Brasil', en: 'Milk coffee, Brazilian beans' },
 
-  'proof.title': { es: 'Lo que más repiten nuestras {{reviews}} reseñas en Google', en: 'What our {{reviews}} Google reviews mention most' },
-  'proof.mentions': { es: 'reseñas', en: 'reviews' },
-  'proof.rating': { es: 'en Google Maps', en: 'on Google Maps' },
-  'proof.source': { es: 'Temas detectados por Google Maps en octubre de 2026.', en: 'Topics detected by Google Maps, October 2026.' },
+  'proof.h2': { es: 'Lo que se repite en las reseñas', en: 'What reviews keep mentioning' },
+  'proof.count': { es: '{{reviews}} reseñas en Google Maps', en: '{{reviews}} reviews on Google Maps' },
+  'proof.topics': { es: 'Lo más mencionado', en: 'Most mentioned' },
+  'proof.source': {
+    es: 'Citas literales de reseñas de Google. Temas y número de reseñas que los mencionan, según Google Maps ({{date}}).',
+    en: 'Quotes from Google reviews, translated from Spanish. Topics and number of reviews mentioning them, per Google Maps ({{date}}).',
+  },
 
   'vit.eyebrow': { es: 'La vitrina', en: 'The counter' },
   'vit.h2': { es: 'Recetas del Báltico y de Francia, horneadas en nuestro obrador.', en: 'Recipes from the Baltics and France, baked in our own kitchen.' },
@@ -92,6 +102,8 @@ export const T = {
     en: 'Everything savoury comes on our own sourdough. We cure the salmon in-house, and make the cottage cheese for the syrniki here too.',
   },
   'des.full': { es: 'La carta de desayuno', en: 'The breakfast menu' },
+  'des.tabs': { es: 'Secciones de la carta', en: 'Menu sections' },
+  'des.teaAlt': { es: 'Servicio de té en porcelana con flores sobre bandeja de plata', en: 'Floral porcelain tea service on a silver tray' },
   'des.drinks': { es: 'En la taza', en: 'In the cup' },
   'des.coffeeNote': {
     es: 'Café de especialidad tostado para nosotros según el estándar de la Specialty Coffee Association. Para los cafés con leche usamos grano de Brasil: suave, con notas de chocolate y frutos secos. Tenemos bebida de avena.',
@@ -128,8 +140,12 @@ export const T = {
     es: 'Tartas enteras (medovik, tarta de queso, carrot cake…) y hogazas reservadas. Llámanos o pregúntanos en el mostrador y lo dejamos preparado.',
     en: 'Whole cakes (medovik, cheesecake, carrot cake…) and loaves set aside for you. Call us or ask at the counter and we’ll have it ready.',
   },
-  'pan.orderAlt': { es: 'Porción de medovik con una vela de cumpleaños, en un plato de porcelana con flores', en: 'Slice of medovik with a birthday candle on a floral porcelain plate' },
-  'pan.call': { es: 'Llamar para encargar', en: 'Call to order' },
+  'pan.orderAlt': { es: 'Tartas enteras en la vitrina: milhojas con fresas y tarta de queso', en: 'Whole cakes on the counter: strawberry mille-feuille and cheesecake' },
+  'pan.call': { es: 'Encargar', en: 'Order' },
+  'pan.glovo': {
+    es: '¿Sin tiempo para pasar? También estamos en <b>Glovo</b>, para recoger o a domicilio.',
+    en: 'No time to drop by? We’re also on <b>Glovo</b>, for pickup or delivery.',
+  },
 
   'vis.eyebrow': { es: 'Visítanos', en: 'Visit us' },
   'vis.h2': { es: 'En la esquina de la Plaça Fontanella.', en: 'On the corner of Plaça Fontanella.' },
@@ -162,24 +178,25 @@ export const T = {
   'vis.mapTitle': { es: 'Mapa: Niki & Niki en la Plaça Fontanella, Dénia', en: 'Map: Niki & Niki on Plaça Fontanella, Dénia' },
   'vis.mascotasAlt': { es: 'Pegatina «Mascotas bienvenidas» en la puerta', en: '“Pets welcome” sticker on the door' },
 
-  'mor.eyebrow': { es: 'Moraira · de 16:00 a 22:00', en: 'Moraira · 4 pm to 10 pm' },
+  'mor.eyebrow': { es: 'Moraira · mié–dom · 16–22 h', en: 'Moraira · Wed–Sun · 4–10 pm' },
   'mor.h2': { es: 'Cuando cerramos en Dénia, se encienden las luces en Moraira.', en: 'When Dénia closes, the lights come on in Moraira.' },
   'mor.lead': {
-    es: 'Nuestra segunda casa, en la Av. de la Paz de Moraira, abre también por la noche de miércoles a domingo. La cocina está hecha casi entera desde cero: costillas a baja temperatura, pato, carpaccio de atún con chile, tartar, paté casero, ensaladilla rusa con gambas… y una buena selección de vinos naturales.',
-    en: 'Our second home, on Av. de la Paz in Moraira, also opens in the evening from Wednesday to Sunday. Almost everything is made from scratch: slow-cooked ribs, duck, tuna carpaccio with chilli, tartare, homemade pâté, Russian salad with prawns… and a good list of natural wines.',
+    es: 'Nuestra segunda casa, en la Av. de la Paz de Moraira, abre también por la noche de miércoles a domingo: platos para compartir, cocina hecha casi entera desde cero y vino natural. Puedes reservar mesa en la barra o en la terraza.',
+    en: 'Our second home, on Av. de la Paz in Moraira, also opens in the evening from Wednesday to Sunday: plates to share, cooking done almost entirely from scratch, and natural wine. You can book a table at the bar or on the terrace.',
   },
-  'mor.tastingTitle': { es: 'Tasting menu', en: 'Tasting menu' },
-  'mor.tastingLead': {
-    es: 'Pequeños platos para probar un poco de todo: pato con puré, tostada de anchoas, paté casero, guacamole, pan de masa madre, gilda y más.',
-    en: 'Small plates to try a bit of everything: duck with mash, anchovy toast, homemade pâté, guacamole, sourdough, gilda and more.',
+  'mor.menuTitle': { es: 'Este otoño, de la cocina de noche', en: 'This autumn, from the evening kitchen' },
+  'mor.menu': {
+    es: 'Pechuga de pato con puré de azafrán, brocolini y mermelada de grosella negra · lechuga romana a la brasa sobre tahini · paté de hígado de pollo con grosella negra · carpaccio de atún · guacamole con pimientos de Padrón · gildas de anchoa · curry a la española con patata y sobrasada · y nuestro pan de masa madre con mantequilla batida.',
+    en: 'Duck breast with saffron purée, broccolini and blackcurrant jam · grilled romaine on tahini · chicken liver pâté with blackcurrant jam · tuna carpaccio · guacamole with Padrón peppers · anchovy gildas · Spanish-style curry with potato and sobrasada · and our sourdough with whipped butter.',
   },
-  'mor.tastingPrice': { es: '25 € · 28 € con una copa de vino', en: '€25 · €28 with a glass of wine' },
+  'mor.menuNote': { es: 'Platos que hemos compartido en Instagram en octubre. La carta cambia: pregúntanos qué hay hoy.', en: 'Dishes we shared on Instagram in October. The menu changes, so ask what’s on today.' },
   'mor.hours': { es: 'Lun–mar 8:00–15:30 · mié–dom 8:00–22:00, cocina de noche desde las 16:00', en: 'Mon–Tue 8:00–15:30 · Wed–Sun 8:00–22:00, evening kitchen from 16:00' },
-  'mor.call': { es: 'Reservar por teléfono', en: 'Book by phone' },
+  'mor.reserve': { es: 'Reservar mesa', en: 'Book a table' },
+  'mor.call': { es: 'Llamar', en: 'Call' },
   'mor.dir': { es: 'Cómo llegar a Moraira', en: 'Directions to Moraira' },
-  'mor.tartarAlt': { es: 'Tartar de ternera con anchoas y chips de trufa en bandeja de plata', en: 'Beef tartare with anchovies and truffle chips on a silver tray' },
+  'mor.mesaAlt': { es: 'Mesa de noche en Moraira vista desde arriba: lechuga a la brasa, paté, guacamole, carpaccio de atún, pan de masa madre y vino natural', en: 'Evening table in Moraira from above: grilled lettuce, pâté, guacamole, tuna carpaccio, sourdough and natural wine' },
   'mor.salaAlt': { es: 'Sala de Niki & Niki en Moraira con lámpara de flecos y pared terracota', en: 'Niki & Niki Moraira dining room with a fringed lamp and terracotta wall' },
-  'mor.degAlt': { es: 'Plato del tasting menu en porcelana con flores', en: 'Tasting-menu dish on floral porcelain' },
+  'mor.patoAlt': { es: 'Pechuga de pato con puré de azafrán, brocolini y mermelada de grosella negra', en: 'Duck breast with saffron purée, broccolini and blackcurrant jam' },
 
   'foot.tag': { es: 'Bakery. Food. Wine.', en: 'Bakery. Food. Wine.' },
   'foot.denia': { es: 'Dénia · desayunos y panadería', en: 'Dénia · breakfast & bakery' },
@@ -192,5 +209,6 @@ export const T = {
 
   'bar.call': { es: 'Llamar', en: 'Call' },
   'bar.go': { es: 'Cómo llegar', en: 'Directions' },
+  'bar.reserve': { es: 'Reservar', en: 'Book' },
   'dlg.close': { es: 'Cerrar', en: 'Close' },
 };

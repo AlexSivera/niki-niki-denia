@@ -49,3 +49,22 @@ Revisión del 4 de octubre de 2026 con Chrome (Playwright) sobre `dist/` servido
 **Test de 5 segundos (móvil):** mesa real con syrniki y café → «Masa madre, tartas del Báltico y café en porcelana antigua» → «Plaça Fontanella, Dénia» → barra con «Cerrado/Abierto», «Llamar» y «Cómo llegar». Se entiende qué es, qué ofrece, qué carácter tiene y qué hacer.
 
 **Test de identidad (sin logo, nombre, colores ni fotos):** quedan los sellos de origen tipo marca de porcelana, los platos con filo dorado, las baldas de cristal, los nombres *syrniki / medovik / bulka / Vecrīga* y el puente de mañana a noche con Moraira. Sigue siendo reconocible.
+
+## Revisión del 5 de noviembre de 2026
+
+Recorrido pantalla a pantalla de la URL publicada (390 px y 1440 px) y nueva visita a Google Maps e Instagram. Cambios aplicados:
+
+| Área | Cambio |
+|---|---|
+| Moraira | Botón **«Reservar mesa»** con la reserva online real (CoverManager desde su ficha de Google). Carta de noche con los platos que publicaron en octubre, en lugar del menú degustación (sin confirmar). Fotos nuevas de Instagram: mesa de la carta de noche y pato |
+| Barra móvil | En la sección de Moraira pasa a modo noche con estado de Moraira, «Cómo llegar» y «Reservar». Muestra «Dénia» o «Moraira» junto al estado |
+| Cabecera | El estado indica el local: «Dénia · Abierto ahora…» |
+| Reseñas | En vez de la cuadrícula de cifras: nota, 3 citas literales y los temas como etiquetas (datos del 5/11: 759 reseñas, «panadería» en cabeza) |
+| Desayunos | Carta en pestañas accesibles (Con pan / Dulce / Salado, con flechas del teclado; sin JavaScript se ve entera). La sección pasa de ~3.800 a ~2.950 px en móvil. Bebidas en línea y foto del servicio de té |
+| Fotos | Tazas con la porcelana a la vista (4 sustituidas), syrniki y tostada de aguacate de mejor calidad, miga sin la mano, hogaza más luminosa, tartas enteras para «Encargos» (antes repetía el medovik de la vitrina) |
+| Pan y encargos | El botón ya no parte el teléfono («Encargar · 605 45 84 74»). Mención a Glovo |
+| Detalles | Texto superior del hero sin cortes en móvil, pie de foto de la mesa en móvil, «Bueno saber» con iconos iguales y en una columna en móvil, indicador de desplazamiento de la vitrina, nota «4.3» en inglés, imagen para compartir en JPG con medidas |
+
+Comprobado en local (`dist/` servido en http://localhost:4321): consola sin errores propios (solo avisos del iframe de Google Maps), sin desbordamiento horizontal a 390 px, pestañas con ratón y teclado, barra de Moraira a la vista en su sección, versión inglesa con textos traducidos. Altura total en móvil: de 13.390 a ~12.790 px.
+
+**Pendiente de confirmar con el negocio**: si sigue el menú degustación de Moraira y su precio, y el enlace directo a su tienda de Glovo.

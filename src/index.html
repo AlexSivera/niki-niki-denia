@@ -13,7 +13,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{t:meta.title}}">
 <meta property="og:description" content="{{t:meta.desc}}">
-<meta property="og:image" content="{{site}}/img/og-1200.webp">
+<meta property="og:image" content="{{site}}/img/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="{{url}}">
 <meta property="og:locale" content="{{locale}}">
 <link rel="icon" href="{{base}}img/icon-32.png" sizes="32x32">
@@ -39,7 +41,7 @@
       <a href="#moraira">{{t:nav.moraira}}</a>
     </nav>
     <div class="top__side">
-      <span class="status" data-status aria-live="polite"><span class="status__dot"></span><span data-status-text>{{t:hero.m1}}</span></span>
+      <span class="status" data-status data-prefix="{{t:status.where}}" aria-live="polite"><span class="status__dot"></span><span data-status-text>{{t:hero.m1}}</span></span>
       <a class="lang" href="{{otherUrl}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang="{{otherLang}}"><span class="sr">{{t:lang.other}}</span><span aria-hidden="true">{{t:lang.otherShort}}</span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="nav" data-burger><span></span><span></span><span class="sr">{{t:nav.menu}}</span></button>
     </div>
@@ -93,17 +95,22 @@
       </ol>
     </div>
   </div>
+  <p class="hero__cap">{{t:hero.cap}}</p>
 </section>
 
 <!-- 2 · Lo que dicen las reseñas -->
 <section class="proof" aria-labelledby="proof-h">
   <div class="wrap proof__in">
     <div class="proof__head">
-      <p class="proof__rating"><span class="proof__big">{{biz.rating}}</span><span class="proof__stars" aria-hidden="true">★★★★☆</span><span>{{biz.reviews}} {{t:proof.mentions}} · {{t:proof.rating}}</span></p>
-      <h2 id="proof-h">{{t:proof.title}}</h2>
+      <p class="proof__rating"><span class="proof__big">{{biz.rating}}</span><span class="proof__stars" aria-hidden="true">★★★★☆</span><span>{{t:proof.count}}</span></p>
+      <h2 id="proof-h">{{t:proof.h2}}</h2>
     </div>
-    <ul class="proof__list">{{block:topics}}</ul>
-    <p class="proof__src">{{t:proof.source}}</p>
+    <ul class="proof__quotes">{{block:quotes}}</ul>
+    <div class="proof__foot">
+      <p class="proof__label">{{t:proof.topics}}</p>
+      <ul class="proof__tags">{{block:topics}}</ul>
+      <p class="proof__src">{{t:proof.source}}</p>
+    </div>
   </div>
 </section>
 
@@ -124,6 +131,7 @@
       <button type="button" aria-pressed="false" data-filter="celebrate">{{t:vit.f.celebrate}}</button>
     </div>
     <ul class="shelf" data-shelf>{{block:vitrina}}</ul>
+    <div class="shelf__bar" data-shelf-bar aria-hidden="true" hidden><span></span></div>
     <div class="vitrina__foot">
       <div class="also">
         <h3>{{t:vit.also.title}}</h3>
@@ -164,15 +172,20 @@
       <ul class="dishes">{{block:destacados}}</ul>
       <div class="carta">
         <h3 class="carta__title">{{t:des.full}}</h3>
+        <div class="carta__tabs" role="tablist" aria-label="{{t:des.tabs}}" data-tabs>{{block:cartaTabs}}</div>
         {{block:carta}}
-        <div class="carta__extras">{{block:extras}}</div>
         <p class="fine">{{t:des.prices}}</p>
       </div>
     </div>
     <div class="drinks">
-      <h3 class="drinks__title">{{t:des.drinks}}</h3>
-      <div class="drinks__cols">{{block:bebidas}}</div>
-      <p class="drinks__note">{{t:des.coffeeNote}}</p>
+      <div class="drinks__head">
+        <h3 class="drinks__title">{{t:des.drinks}}</h3>
+        <figure class="drinks__pic"><img src="{{base}}img/te-servicio-480.webp" srcset="{{base}}img/te-servicio-480.webp 480w, {{base}}img/te-servicio-900.webp 900w" sizes="(min-width: 960px) 220px, 34vw" width="480" height="480" alt="{{t:des.teaAlt}}" loading="lazy"></figure>
+      </div>
+      <div class="drinks__body">
+        <div class="drinks__cols">{{block:bebidas}}</div>
+        <p class="drinks__note">{{t:des.coffeeNote}}</p>
+      </div>
     </div>
     <p class="allergens"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v6M12 16.5v.01"/></svg>{{t:des.allergens}}</p>
   </div>
@@ -208,12 +221,13 @@
     </figure>
     <div class="order">
       <figure class="order__img">
-        <img src="{{base}}img/encargo-medovik-500.webp" srcset="{{base}}img/encargo-medovik-500.webp 500w, {{base}}img/encargo-medovik-900.webp 900w" sizes="(min-width: 960px) 20vw, 40vw" width="500" height="625" alt="{{t:pan.orderAlt}}" loading="lazy">
+        <img src="{{base}}img/encargo-tartas-500.webp" srcset="{{base}}img/encargo-tartas-500.webp 500w, {{base}}img/encargo-tartas-900.webp 900w" sizes="(min-width: 960px) 20vw, 100vw" width="500" height="625" alt="{{t:pan.orderAlt}}" loading="lazy">
       </figure>
       <div class="order__text">
         <h3>{{t:pan.orderTitle}}</h3>
         <p>{{t:pan.orderLead}}</p>
         <a class="btn btn--green" href="tel:{{biz.phone}}">{{t:pan.call}} · {{biz.phoneLabel}}</a>
+        <p class="order__glovo">{{t:pan.glovo}}</p>
       </div>
     </div>
   </div>
@@ -240,13 +254,13 @@
         </dl>
         <div class="info__ctas">
           <a class="btn btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener">{{t:vis.directions}} <span aria-hidden="true">→</span></a>
-          <a class="btn btn--line" href="{{biz.maps}}" target="_blank" rel="noopener">{{t:vis.maps}}</a>
+          <a class="btn btn--line" href="tel:{{biz.phone}}">{{t:bar.call}}</a>
         </div>
       </div>
       <div class="card good">
         <h3>{{t:vis.good}}</h3>
         <ul>
-          <li><img src="{{base}}img/mascotas-240.webp" width="48" height="48" alt="{{t:vis.mascotasAlt}}" loading="lazy">{{t:vis.g1}}</li>
+          <li><span class="tick" aria-hidden="true"></span>{{t:vis.g1}}</li>
           <li><span class="tick" aria-hidden="true"></span>{{t:vis.g2}}</li>
           <li><span class="tick" aria-hidden="true"></span>{{t:vis.g3}}</li>
           <li><span class="tick" aria-hidden="true"></span>{{t:vis.g4}}</li>
@@ -277,20 +291,21 @@
       <h2 id="mor-h">{{t:mor.h2}}</h2>
       <p>{{t:mor.lead}}</p>
       <div class="tasting">
-        <h3>{{t:mor.tastingTitle}}</h3>
-        <p>{{t:mor.tastingLead}}</p>
-        <p class="tasting__price">{{t:mor.tastingPrice}}</p>
+        <h3>{{t:mor.menuTitle}}</h3>
+        <p>{{t:mor.menu}}</p>
+        <p class="tasting__note">{{t:mor.menuNote}}</p>
       </div>
       <p class="moraira__info">{{mor.address}} · {{mor.postal}} {{mor.city}}<br>{{t:mor.hours}}</p>
       <div class="ctas">
-        <a class="btn btn--sun" href="tel:{{mor.phone}}">{{t:mor.call}} · {{mor.phoneLabel}}</a>
+        <a class="btn btn--sun" href="{{mor.reserve}}" target="_blank" rel="noopener">{{t:mor.reserve}} <span aria-hidden="true">→</span></a>
+        <a class="btn btn--line-light" href="tel:{{mor.phone}}">{{t:mor.call}} · {{mor.phoneLabel}}</a>
         <a class="btn btn--line-light" href="{{mor.directions}}" target="_blank" rel="noopener">{{t:mor.dir}}</a>
       </div>
     </div>
     <div class="moraira__pics">
       <img class="m1" src="{{base}}img/moraira-sala-500.webp" srcset="{{base}}img/moraira-sala-500.webp 500w, {{base}}img/moraira-sala-900.webp 900w" sizes="(min-width: 960px) 22vw, 46vw" width="500" height="625" alt="{{t:mor.salaAlt}}" loading="lazy">
-      <img class="m2" src="{{base}}img/moraira-tartar-500.webp" srcset="{{base}}img/moraira-tartar-500.webp 500w, {{base}}img/moraira-tartar-900.webp 900w" sizes="(min-width: 960px) 22vw, 46vw" width="500" height="625" alt="{{t:mor.tartarAlt}}" loading="lazy">
-      <img class="m3" src="{{base}}img/moraira-degustacion-500.webp" srcset="{{base}}img/moraira-degustacion-500.webp 500w, {{base}}img/moraira-degustacion-900.webp 900w" sizes="(min-width: 960px) 18vw, 40vw" width="500" height="625" alt="{{t:mor.degAlt}}" loading="lazy">
+      <img class="m2" src="{{base}}img/moraira-mesa-500.webp" srcset="{{base}}img/moraira-mesa-500.webp 500w, {{base}}img/moraira-mesa-900.webp 900w" sizes="(min-width: 960px) 22vw, 46vw" width="500" height="625" alt="{{t:mor.mesaAlt}}" loading="lazy">
+      <img class="m3" src="{{base}}img/moraira-pato-500.webp" srcset="{{base}}img/moraira-pato-500.webp 500w, {{base}}img/moraira-pato-900.webp 900w" sizes="(min-width: 960px) 18vw, 40vw" width="500" height="625" alt="{{t:mor.patoAlt}}" loading="lazy">
     </div>
   </div>
 </section>
@@ -322,9 +337,16 @@
 </footer>
 
 <nav class="bar" aria-label="{{t:bar.go}}" data-bar>
-  <span class="status status--bar" data-status><span class="status__dot"></span><span data-status-short>8–17 h</span></span>
-  <a class="bar__btn" href="tel:{{biz.phone}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>{{t:bar.call}}</a>
-  <a class="bar__btn bar__btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>{{t:bar.go}}</a>
+  <div class="bar__set" data-bar-set="denia">
+    <span class="status status--bar" data-status><span class="status__dot"></span><span class="bar__where">Dénia</span><span data-status-short>8–17 h</span></span>
+    <a class="bar__btn" href="tel:{{biz.phone}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>{{t:bar.call}}</a>
+    <a class="bar__btn bar__btn--sun" href="{{biz.directions}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>{{t:bar.go}}</a>
+  </div>
+  <div class="bar__set" data-bar-set="moraira" hidden>
+    <span class="status status--bar" data-mstatus><span class="status__dot"></span><span class="bar__where">Moraira</span><span data-status-short>16–22 h</span></span>
+    <a class="bar__btn" href="{{mor.directions}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>{{t:bar.go}}</a>
+    <a class="bar__btn bar__btn--sun" href="{{mor.reserve}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4m6-4v4"/></svg>{{t:bar.reserve}}</a>
+  </div>
 </nav>
 
 <script id="i18n" type="application/json">{{clientI18n}}</script>

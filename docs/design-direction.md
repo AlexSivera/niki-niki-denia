@@ -54,7 +54,7 @@ Reglas: el fondo es mármol o papel y **nunca blanco puro**. El amarillo sirve p
 - **Solo fotos reales del negocio** de Instagram (propias, muy buenas) y de Google Maps (las del propietario y las de clientes mejor resueltas).
 - **Cenitales recortadas en círculo**: mesas, platos y tazas.
 - **Verticales a sangre** para el local: fachada, barra de terrazo y vitrina.
-- Ni stock, ni ilustraciones de producto, ni imágenes generadas. El producto tiene que dar hambre: medovik en capas, croissant de almendra, huevos turcos y miga de masa madre.
+- Ni stock, ni ilustraciones de producto, ni imágenes generadas. En la tira de tazas, mejor fotos de lado o de tres cuartos donde se vea el dibujo de la porcelana que latte art visto desde arriba. El producto tiene que dar hambre: medovik en capas, croissant de almendra, huevos turcos y miga de masa madre.
 - La foto con mejor apetito manda. Las de Instagram tienen un tono cálido y apagado, así que se ajustan las de clientes para que no desentonen (contraste y saturación suaves).
 
 ## Composición y ritmo
@@ -90,8 +90,9 @@ Reglas: el fondo es mármol o papel y **nunca blanco puro**. El amarillo sirve p
 
 | Archivo web | Origen |
 |---|---|
-| hero-syrniki, hero-cafe, cardamomo, moraira-* | Instagram oficial @nikiniki.bakery (posts de 2026) |
-| medovik, croissant-almendra, croissant, huevos-turcos, shakshuka, canele, tarta-queso, carrot-cake, tostada-*, pan-*, fachada, barra, vitrina-*, mascotas, tazas-* | Fotos de la ficha de Google Maps (subidas por el propietario o por clientes) |
+| mesa-syrniki, mesa-cafe, og, vit-cardamomo, moraira-sala | Instagram oficial @nikiniki.bakery (posts de 2026) |
+| moraira-mesa, moraira-pato | Instagram oficial, carta de noche de Moraira (posts del 16/10 y 4/10/2026) |
+| vit-*, des-turcos, des-shakshuka, des-syrniki (gm122), des-tostada (gm129), te-servicio (gm173), taza-* (gm064, gm057, gm188 y gm141 desde el 5/11), pan-*, encargo-tartas (gm155), fachada, barra | Fotos de la ficha de Google Maps (subidas por el propietario o por clientes) |
 | logo | Extraído de la carta impresa del local (foto de Google Maps) |
 
 **Antes de publicar en definitiva**: pedir al propietario los originales y el logo vectorial, y confirmar permisos de las fotos de clientes.

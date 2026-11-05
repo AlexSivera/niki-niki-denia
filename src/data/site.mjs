@@ -1,5 +1,6 @@
 // Datos del negocio, carta y vitrina. Todo bilingüe: { es, en }.
-// Fuentes: ficha de Google Maps, cartas fotografiadas en Google Maps e Instagram @nikiniki.bakery (oct. 2026).
+// Fuentes: ficha de Google Maps, cartas fotografiadas en Google Maps e Instagram @nikiniki.bakery
+// (oct. 2026; reseñas, temas, reservas de Moraira y carta de noche revisados el 5/11/2026).
 
 export const BIZ = {
   name: 'Niki & Niki',
@@ -17,7 +18,8 @@ export const BIZ = {
   maps: 'https://www.google.com/maps/place/Cafeter%C3%ADa+Niki+%26+Niki/@38.8433588,0.1100511,19z/data=!4m6!3m5!1s0x129e1b18bb44fa1b:0x8229be70f495bfa9!8m2!3d38.8433588!4d0.1100511!16s%2Fg%2F11t85c3wxj',
   directions: 'https://www.google.com/maps/dir/?api=1&destination=38.8433588,0.1100511',
   rating: '4,3',
-  reviews: '745',
+  reviews: '759',
+  reviewsDate: { es: 'noviembre de 2026', en: 'November 2026' },
 };
 
 export const MORAIRA = {
@@ -29,18 +31,28 @@ export const MORAIRA = {
   lat: 38.6887569,
   lng: 0.131908,
   directions: 'https://www.google.com/maps/dir/?api=1&destination=38.6887569,0.131908',
+  // Reserva online real: botón «Reservar una mesa» de su ficha de Google, gestionado con CoverManager (barra y terraza).
+  reserve: 'https://www.google.com/maps/reserve/v/dine/c/7PcfqOPpJn4',
 };
+
+// Citas literales de reseñas de Google (Dénia, 5 estrellas). En inglés van traducidas y se indica.
+export const QUOTES = [
+  { es: '«Se nota que es todo casero y recién preparado.»', en: '“You can tell everything is homemade and freshly made.”' },
+  { es: '«La mejor tarta de queso que probé nunca…»', en: '“The best cheesecake I’ve ever had…”' },
+  { es: '«¡El pan es sencillamente espectacular!»', en: '“The bread is simply spectacular!”' },
+];
 
 // Temas que Google Maps detecta en las reseñas (número de reseñas que los mencionan).
 export const TOPICS = [
+  { n: 33, es: 'panadería', en: 'bakery' },
   { n: 29, es: 'café de especialidad', en: 'specialty coffee' },
-  { n: 26, es: 'tarta de queso', en: 'cheesecake' },
-  { n: 22, es: 'pan de masa madre', en: 'sourdough bread' },
+  { n: 28, es: 'tarta de queso', en: 'cheesecake' },
+  { n: 23, es: 'pan de masa madre', en: 'sourdough bread' },
   { n: 15, es: 'shakshuka', en: 'shakshuka' },
   { n: 13, es: 'syrniki', en: 'syrniki' },
   { n: 10, es: 'medovik', en: 'medovik' },
   { n: 10, es: 'porcelana', en: 'porcelain' },
-  { n: 7, es: 'canelé', en: 'canelé' },
+  { n: 8, es: 'canelé', en: 'canelé' },
 ];
 
 // Orígenes para el sello (marca de fábrica).
@@ -148,7 +160,7 @@ export const VITRINA = [
 
 // Carta de desayunos (carta impresa «BREAKFAST»).
 export const DESAYUNOS = [
-  { group: { es: 'Con nuestro pan de masa madre', en: 'On our sourdough' }, items: [
+  { group: { es: 'Con nuestro pan de masa madre', en: 'On our sourdough' }, tab: { es: 'Con pan', en: 'On toast' }, items: [
     { price: '11,00', popular: true, name: { es: 'Huevos turcos', en: 'Turkish eggs' }, desc: { es: 'Yogur griego con ajo y menta, dos huevos escalfados y mantequilla especiada', en: 'Greek yoghurt with garlic and mint, two poached eggs, spiced butter' } },
     { price: '12,50', name: { es: 'Shakshuka', en: 'Shakshuka' }, desc: { es: 'Huevos en salsa de tomate picante, con pan de masa madre', en: 'Eggs in spicy tomato sauce, with sourdough' } },
     { price: '10,50', name: { es: 'Tostada de salmón curado en casa', en: 'House-cured salmon toast' }, desc: { es: 'Con queso crema al eneldo y ajo', en: 'With dill and garlic cream cheese' } },
@@ -157,14 +169,14 @@ export const DESAYUNOS = [
     { price: '6,50', name: { es: 'Tostada de aguacate', en: 'Avocado toast' }, desc: { es: 'Con el extra que quieras', en: 'With a topping of your choice' } },
     { price: '5,50', name: { es: 'Tostada con tomate', en: 'Tomato toast' }, desc: { es: 'Con el extra que quieras', en: 'With a topping of your choice' } },
   ] },
-  { group: { es: 'Dulce y de cuchara', en: 'Sweet & by the spoon' }, items: [
+  { group: { es: 'Dulce y de cuchara', en: 'Sweet & by the spoon' }, tab: { es: 'Dulce', en: 'Sweet' }, items: [
     { price: '13,50', name: { es: 'Syrniki', en: 'Syrniki' }, desc: { es: 'Tortitas de requesón hecho en casa, con crema agria y leche condensada', en: 'Pancakes of house-made cottage cheese, with sour cream and condensed milk' } },
     { price: '8,90', name: { es: 'Granola casera', en: 'Homemade granola' }, desc: { es: 'Con yogur griego, fruta fresca y miel de castaño', en: 'With Greek yoghurt, fresh fruit and chestnut honey' } },
     { price: '6,20', name: { es: 'Porridge de avena', en: 'Oatmeal' }, desc: { es: 'En agua o bebida de avena, con frutos rojos, yogur griego y miel de castaño', en: 'Cooked in water or oat milk, with berries, Greek yoghurt and chestnut honey' } },
     { price: '11,50', name: { es: 'Açaí bowl', en: 'Açaí bowl' }, desc: { es: 'Con granola casera, fruta de temporada y coco', en: 'With homemade granola, seasonal fruit and coconut' } },
     { price: '3,60', name: { es: 'Croissant con mermelada', en: 'Croissant with jam' }, desc: { es: 'Mermelada de fresa y mantequilla francesa', en: 'Strawberry jam and French butter' } },
   ] },
-  { group: { es: 'Salado de la casa', en: 'House savouries' }, items: [
+  { group: { es: 'Salado de la casa', en: 'House savouries' }, tab: { es: 'Salado', en: 'Savoury' }, items: [
     { price: '11,50', name: { es: 'Tortilla', en: 'Omelette' }, desc: { es: 'Con jamón casero y queso trufado', en: 'With house-made ham and truffle cheese' } },
     { price: '9,90', name: { es: 'Truffle blanche', en: 'Truffle blanche' }, desc: { es: 'Pan crujiente con pavo, queso de oveja trufado y gouda fundido', en: 'Crisp bread with turkey, truffled sheep’s cheese and melted gouda' } },
     { price: '8,50', name: { es: 'Ensaladilla rusa', en: 'Russian salad' }, desc: { es: 'Con ternera casera', en: 'With house-cooked beef' } },
@@ -185,8 +197,8 @@ export const EXTRAS = {
 
 // Platos fotografiados en la sección de desayunos.
 export const DESTACADOS = [
-  { img: 'des-turcos', price: '11,00', name: { es: 'Huevos turcos', en: 'Turkish eggs' }, note: { es: 'Marcado como «popular» en Google', en: 'Marked “popular” on Google' } },
-  { img: 'des-syrniki', price: '13,50', name: { es: 'Syrniki', en: 'Syrniki' }, note: { es: 'Requesón casero y mermelada de grosella negra', en: 'House cottage cheese, blackcurrant jam' } },
+  { img: 'des-turcos', price: '11,00', name: { es: 'Huevos turcos', en: 'Turkish eggs' }, note: { es: 'Yogur con ajo, huevos escalfados y mantequilla especiada', en: 'Garlic yoghurt, poached eggs, spiced butter' } },
+  { img: 'des-syrniki', price: '13,50', name: { es: 'Syrniki', en: 'Syrniki' }, note: { es: 'Tortitas de requesón hecho en casa', en: 'Pancakes of house-made cottage cheese' } },
   { img: 'des-shakshuka', price: '12,50', name: { es: 'Shakshuka', en: 'Shakshuka' }, note: { es: 'Picante, con pan para mojar', en: 'Spicy, with bread for dipping' } },
   { img: 'des-tostada', price: '6,50 + 1,70', name: { es: 'Aguacate y huevo escalfado', en: 'Avocado & poached egg' }, note: { es: 'Sobre masa madre', en: 'On sourdough' } },
 ];

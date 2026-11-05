@@ -28,7 +28,7 @@ No es la cafetería de barrio de tostada con tomate y café a 1,50 €, ni una c
 - **Vino natural** de productores valencianos, y por las tardes una tabla de quesos.
 - **Porcelana antigua desparejada**: inglesa, bávara y francesa, con flores y filos dorados, además de bandejas y teteras de plata. Es el rasgo que más repiten las reseñas y lo que hace la experiencia «diferente».
 
-Propietaria: **Alena**, según una reseña de 2024 («¡El lugar de Alena tiene un ambiente maravilloso!»). Google lo identifica como negocio de propietarias mujeres. Equipo joven e internacional: en las reseñas aparecen Tao, Lina, Igor, Egor y Tim. Hay un segundo local en **Moraira** que abrió hacia 2025 y que desde septiembre de 2026 abre también **por la noche** (de miércoles a domingo de 16:00 a 22:00, con un *Tasting Menu* de tapas a 25 € o 28 € con copa de vino).
+Propietaria: **Alena**, según una reseña de 2024 («¡El lugar de Alena tiene un ambiente maravilloso!»). Google lo identifica como negocio de propietarias mujeres. Equipo joven e internacional: en las reseñas aparecen Tao, Lina, Igor, Egor y Tim. Hay un segundo local en **Moraira** que abrió hacia 2025 y que desde septiembre de 2026 abre también **por la noche** (de miércoles a domingo de 16:00 a 22:00, con un *Tasting Menu* de tapas a 25 € o 28 € con copa de vino según lo visto en septiembre; **en octubre anunciaron carta de noche nueva y no se ha podido confirmar si el menú degustación sigue**).
 
 ## Ubicación y local
 
@@ -97,3 +97,9 @@ Hospitalaria al estilo de «la casa de la abuela», pero con gusto contemporáne
 3. **Encargos** de tartas y hogazas por teléfono.
 4. Llevar a la gente de Dénia a **cenar a Moraira**.
 5. Dar una presencia propia y en español que no dependa de Instagram.
+
+## Actualización del 5 de noviembre de 2026
+
+- **Dénia**: 4,3 ★ con 759 reseñas. Temas: panadería (33), café de especialidad (29), tarta de queso (28), pan de masa madre (23), shakshuka (15), syrniki (13), medovik (10), porcelana (10), huevo escalfado (9) y canelé (8). La ficha tiene un botón **«Pedir online»** que lleva a **Glovo** (recogida y entrega). No se ha encontrado el enlace directo a su tienda en Glovo.
+- **Moraira**: 4,6 ★ con 307 reseñas. La ficha tiene **«Reservar una mesa»**, con reserva online gestionada por **CoverManager** (zonas «Barra» y «Terrace»). Horario sin cambios.
+- **Instagram**: la cuenta se llama ahora «NIKI&NIKI BAKERY & KITCHEN» (4.875 seguidores). En octubre publicaron la «New Evening Menu» de Moraira: pechuga de pato con puré de azafrán, lechuga romana a la brasa con tahini, paté de hígado de pollo con grosella negra, carpaccio de atún, guacamole con pimientos de Padrón, gildas y curry a la española con sobrasada.

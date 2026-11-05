@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { T } from '../src/data/i18n.mjs';
-import { BIZ, MORAIRA, TOPICS, ORIGINS, VITRINA, DESAYUNOS, EXTRAS, DESTACADOS, BEBIDAS, AFLUENCIA } from '../src/data/site.mjs';
+import { BIZ, MORAIRA, QUOTES, TOPICS, ORIGINS, VITRINA, DESAYUNOS, EXTRAS, DESTACADOS, BEBIDAS, AFLUENCIA } from '../src/data/site.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'src');
@@ -39,7 +39,9 @@ const pic = (name, sizes, w, h, alt, extra = '', eager = false) => {
 };
 
 const blocks = {
-  topics: (lang) => TOPICS.map((x) => `<li><span class="proof__n">${x.n}</span><span class="proof__w">${esc(x[lang])}</span></li>`).join(''),
+  topics: (lang) => TOPICS.map((x) => `<li>${esc(x[lang])} <span class="proof__n">${x.n}</span></li>`).join(''),
+
+  quotes: (lang) => QUOTES.map((q) => `<li><blockquote><p>${esc(q[lang])}</p></blockquote></li>`).join(''),
 
   vitrina: (lang) => VITRINA.map((v, i) => `
 <li class="piece" data-tags="${v.tags.join(' ')}" style="--i:${i}">
@@ -60,12 +62,15 @@ const blocks = {
   <p class="dish__note">${esc(d.note[lang])}</p>
 </li>`).join(''),
 
-  carta: (lang) => DESAYUNOS.map((g) => `
-<div class="carta__group">
+  // Pestañas de la carta. Sin JavaScript se ven todas las secciones seguidas (los botones solo aparecen con .js).
+  cartaTabs: (lang) => DESAYUNOS.map((g, i) => `<button type="button" role="tab" id="tab-${i}" aria-controls="carta-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(g.tab[lang])}</button>`).join(''),
+
+  carta: (lang) => DESAYUNOS.map((g, i) => `
+<div class="carta__group" role="tabpanel" id="carta-${i}" aria-labelledby="tab-${i}" tabindex="0">
   <h4>${esc(g.group[lang])}</h4>
   <ul>${g.items.map((it) => `
     <li><p class="carta__row"><span class="carta__name">${esc(it.name[lang])}${it.popular ? ` <em class="tag">${esc(t('vit.popular', lang))}</em>` : ''}</span><span class="carta__dots" aria-hidden="true"></span><span class="carta__price">${it.price}</span></p><p class="carta__desc">${esc(it.desc[lang])}</p></li>`).join('')}
-  </ul>
+  </ul>${i === 0 ? `<div class="carta__extras">${blocks.extras(lang)}</div>` : ''}
 </div>`).join(''),
 
   extras: (lang) => `<h4>${esc(EXTRAS.label[lang])}</h4><ul>${EXTRAS.items.map((x) => `<li>${esc(x[lang])} <span>${x.price}</span></li>`).join('')}</ul>`,
@@ -98,7 +103,7 @@ function jsonld(lang) {
         name: 'Niki & Niki — Bakery · Food · Wine',
         description: t('meta.desc', lang),
         url: `${SITE}/`,
-        image: `${SITE}/img/og-1200.webp`,
+        image: `${SITE}/img/og-1200.jpg`,
         telephone: BIZ.phone,
         priceRange: '€€',
         servesCuisine: ['Brunch', 'Bakery', 'Eastern European', 'Specialty coffee'],
@@ -107,7 +112,7 @@ function jsonld(lang) {
         openingHoursSpecification: [hours],
         sameAs: [BIZ.instagram],
         hasMap: BIZ.maps,
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.3', reviewCount: '745', bestRating: '5' },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: BIZ.rating.replace(',', '.'), reviewCount: BIZ.reviews, bestRating: '5' },
         acceptsReservations: false,
       },
       {
@@ -121,7 +126,7 @@ function jsonld(lang) {
           { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday'], opens: '08:00', closes: '15:30' },
           { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '08:00', closes: '22:00' },
         ],
-        acceptsReservations: true,
+        acceptsReservations: MORAIRA.reserve,
         sameAs: [BIZ.instagram],
       },
     ],
@@ -139,14 +144,16 @@ for (const lang of ['es', 'en']) {
     name: v.name[lang], desc: v.desc[lang], price: `${v.price} €`, img: v.img, celebrate: v.tags.includes('celebrate'),
     seal: seal(ORIGINS[v.origin][lang], MAKER[lang], 'seal seal--sheet'),
   }]))).replace(/</g, '\\u003c');
-  const clientI18n = JSON.stringify(Object.fromEntries(['status.open', 'status.soon', 'status.closed', 'status.short.open', 'status.short.closed'].map((k) => [k, t(k, lang)])));
+  const clientI18n = JSON.stringify(Object.fromEntries(['status.open', 'status.soon', 'status.closed', 'status.short.open', 'status.short.closed', 'mstatus.open', 'mstatus.closed'].map((k) => [k, t(k, lang)])));
 
   let html = tpl
     .replace(/\{\{block:(\w+)\}\}/g, (_, b) => blocks[b](lang))
     .replace(/\{\{t:([\w.]+)\}\}/g, (_, k) => t(k, lang))
+    .replace(/\{\{biz\.rating\}\}/g, lang === 'en' ? BIZ.rating.replace(',', '.') : BIZ.rating)
     .replace(/\{\{biz\.(\w+)\}\}/g, (_, k) => BIZ[k])
     .replace(/\{\{mor\.(\w+)\}\}/g, (_, k) => MORAIRA[k])
     .replace(/\{\{reviews\}\}/g, BIZ.reviews)
+    .replace(/\{\{date\}\}/g, BIZ.reviewsDate[lang])
     .replace('{{jsonld}}', () => jsonld(lang))
     .replace('{{clientI18n}}', () => clientI18n)
     .replace('{{vitrinaJson}}', () => vitrinaJson)
