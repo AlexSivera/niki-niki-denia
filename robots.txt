@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alexsivera.github.io/niki-niki-denia/sitemap.xml
